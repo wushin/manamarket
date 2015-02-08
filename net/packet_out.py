@@ -16,6 +16,7 @@ def whisper(nick, message):
 def chat(text):
     chat_packet = PacketOut(CMSG_CHAT_MESSAGE)
     chat_packet.write_int16(len(text) + 4 + 1)
+    chat_packet = PacketOut(CMSG_CHAT_MESSAGE)
     chat_packet.write_string(text, len(text) + 1)
     return str(chat_packet)
 
